@@ -12,9 +12,14 @@ function App() {
     const toggleTheme = useThemeToggleContext();
     return (
       <>
-          <button onClick={toggleTheme}> Toggle Theme </button>
-              <FunctionalComponent></FunctionalComponent>
-              <ClassComponent></ClassComponent>
+
+          <UseEffectHook></UseEffectHook>
+
+          {/* useContext */}
+          {/*<button onClick={toggleTheme}> Toggle Theme </button>*/}
+          {/*    <FunctionalComponent></FunctionalComponent>*/}
+          {/*    <ClassComponent></ClassComponent>*/}
+
 
       </>
   );

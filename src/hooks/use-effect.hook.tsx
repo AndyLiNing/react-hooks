@@ -7,6 +7,8 @@ export function UseEffectHook() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
+    const [renderCounter, setRenderCounter] = useState(0);
+
 
     const resizeHandler = () => {
         console.log('Execute resize event listener')
@@ -29,8 +31,19 @@ export function UseEffectHook() {
         }
     }, []);
 
+    useEffect(() => {
+        setRenderCounter((preRenderCounter) => { return preRenderCounter + 1 })
+    },[]);
+
+    useEffect(() => {
+        setRenderCounter((preRenderCounter) => { return preRenderCounter + 1 })
+    },[]);
+
     return (
         <>
+            <h3> Number of rendering { renderCounter }</h3>
+            <br/>
+            <br/>
 
             <h3> Current window inner size :</h3>
             <p> Inner Width: { windowWidth }</p>
@@ -59,5 +72,7 @@ export function UseEffectHook() {
 *  1, Pass un empty array to useEffect => onMount life cycle hook
 *
 *  2, return a function in useEffect hook, this function will be the cleanup function at EACH RENDER
+*
+*  3, No dependencies passed === run at EACH RENDER
 *
 * */
