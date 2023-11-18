@@ -13,12 +13,16 @@ function App() {
     return (
       <>
 
-          <UseEffectHook></UseEffectHook>
+          {/* 1, useState */}
+          {/*  <UseStateHook/>*/}
 
-          {/* useContext */}
+          {/* 2, useEffect */}
+          {/*<UseEffectHook/>*/}
+
+          {/* 3, useContext */}
           {/*<button onClick={toggleTheme}> Toggle Theme </button>*/}
-          {/*    <FunctionalComponent></FunctionalComponent>*/}
-          {/*    <ClassComponent></ClassComponent>*/}
+          {/*    <FunctionalComponent/>*/}
+          {/*    <ClassComponent/>*/}
 
 
       </>
