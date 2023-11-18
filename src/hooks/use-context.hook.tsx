@@ -1,10 +1,9 @@
-import React, { useContext, useState } from 'react';
+import { Component, useContext, useState, createContext } from 'react';
 
-const ThemeContext = React.createContext<Theme>('dark');
-const ThemeToggleContext = React.createContext<() => void>(() => undefined);
+const ThemeContext = createContext<Theme>('dark');
+const ThemeToggleContext = createContext<() => void>(() => undefined);
 
 export const useThemeToggleContext = () => useContext(ThemeToggleContext);
-
 
 export const UseContextHook = ({ children }: any) => {
     const [theme, setTheme] = useState<Theme>('light')
@@ -21,6 +20,18 @@ export const UseContextHook = ({ children }: any) => {
             )
 }
 
+
+
+/* Notes:
+*  1, The scope of the provider is IMPORTANT, in case of out of scope, the default value is always used (see ThemeToggleContext provided in index.tsx file)
+*
+*  2, Better to pass the generic type to createContext() function call
+*
+*  3, User custom hook to expose contexts (useThemeToggleContext)
+* */
+
+
+
 export const FunctionalComponent = () => {
     const theme  = useContext(ThemeContext);
     const themeStyle = theme === 'light' ? light : dark;
@@ -31,7 +42,7 @@ export const FunctionalComponent = () => {
     )
 }
 
-export class ClassComponent extends React.Component {
+export class ClassComponent extends Component {
     render() {
        return <ThemeContext.Consumer>
            {
