@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+    ClassComponent,
+    FunctionalComponent,
+    useThemeToggleContext
+} from './hooks/use-context.hook';
+import { UseEffectHook } from './hooks/use-effect.hook';
+import { UseStateHook } from './hooks/use-state.hook';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    const toggleTheme = useThemeToggleContext();
+    return (
+      <>
+          <button onClick={toggleTheme}> Toggle Theme </button>
+              <FunctionalComponent></FunctionalComponent>
+              <ClassComponent></ClassComponent>
+
+      </>
   );
 }
 
