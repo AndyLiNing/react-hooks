@@ -19,7 +19,7 @@ export const UseMemoHook = () => {
             padding: '2rem',
             margin: '2rem'
         }
-    }, [])
+    }, [theme])
 
     // WARNING: This useEffect will RUN at EACH render, because 'themeStyle' is an object and be recreated at each render
     useEffect(() => {
