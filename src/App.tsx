@@ -5,6 +5,8 @@ import {
     useThemeToggleContext
 } from './hooks/use-context.hook';
 import { UseEffectHook } from './hooks/use-effect.hook';
+import { UseMemoHook } from './hooks/use-memo.hook';
+import { UseRefHook } from './hooks/use-ref.hook';
 import { UseStateHook } from './hooks/use-state.hook';
 import './App.css';
 
@@ -24,6 +26,11 @@ function App() {
           {/*    <FunctionalComponent/>*/}
           {/*    <ClassComponent/>*/}
 
+          {/* 4, useRef */}
+          {/*<UseRefHook/>*/}
+
+          {/* 5, useMemo */}
+          <UseMemoHook/>
 
       </>
   );
