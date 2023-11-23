@@ -29,7 +29,6 @@ export const UseMemoHook = () => {
     // Solution: Wrap the 'themeStyle' into useMemo
 
 
-
     // const double =  doubleCounterSlowFunction(counter);
     const double = useMemo(() => doubleCounterSlowFunction(counter), [counter]);
 
@@ -43,14 +42,7 @@ export const UseMemoHook = () => {
        setTheme(newTheme);
     }
 
-
-
-
-
-
-
     const onChangeNumber = (e: BaseSyntheticEvent) =>  setCounter( e.target.value);
-
 
     return <>
         <label htmlFor="input"> Change the number: </label>
@@ -69,4 +61,9 @@ export const UseMemoHook = () => {
 *
 *  2, referential equality
 *
+*  3, Comparing with useCallback,
+*     useMemo will cache the return value of the inner function
+*     useCallback will cache the entire inner function
+*
 * */
+

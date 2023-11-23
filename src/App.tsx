@@ -21,16 +21,27 @@ function App() {
           {/* 2, useEffect */}
           {/*<UseEffectHook/>*/}
 
-          {/* 3, useContext */}
+          {/* 3, useLayoutEffect */}
+
+          {/* 4, useContext */}
           {/*<button onClick={toggleTheme}> Toggle Theme </button>*/}
           {/*    <FunctionalComponent/>*/}
           {/*    <ClassComponent/>*/}
 
-          {/* 4, useRef */}
+          {/* 5, useRef */}
           {/*<UseRefHook/>*/}
 
-          {/* 5, useMemo */}
+          {/* 6, useMemo */}
           <UseMemoHook/>
+
+          {/* 7, useCallback */}
+
+          {/* 8, useReducer */}
+
+          {/*9, useTransition */}
+
+          {/* 10, useDeferredValue */}
+
 
       </>
   );
